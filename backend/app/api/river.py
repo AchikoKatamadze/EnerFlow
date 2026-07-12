@@ -1,6 +1,16 @@
 from fastapi import APIRouter
-router=APIRouter(prefix="/river",tags=["River"])
+
+router = APIRouter(
+    prefix="/river",
+    tags=["River"]
+)
+
 
 @router.get("/")
-def get_river():
-    return {"flow_rate":95.2,"reservoir":81}
+def river():
+
+    return {
+        "flow_rate": 96.2,
+        "water_level": 74,
+        "reservoir": 81
+    }

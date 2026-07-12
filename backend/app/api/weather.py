@@ -1,6 +1,17 @@
 from fastapi import APIRouter
-router=APIRouter(prefix="/weather",tags=["Weather"])
+
+from ..services.weather_services import WeatherService
+
+router = APIRouter(
+    prefix="/weather",
+    tags=["Weather"]
+)
+
 
 @router.get("/")
-def get_weather():
-    return {"temperature":14,"humidity":60}
+def weather():
+
+    return WeatherService.get_weather(
+        42.52,
+        43.15
+    )
